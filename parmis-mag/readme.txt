@@ -1,7 +1,7 @@
 === مجلهٔ حسابداری پارمیس ===
 Requires at least: 6.2
 Requires PHP: 7.4
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 
 افزونهٔ مستقل برگرفته از پروژهٔ مرجع؛ با نمایش نوشته‌های واقعی وردپرس، جست‌وجوی فارسی، دسته‌بندی، مقاله‌های منتخب، مسیر مطالعه و چک‌لیست ماهانهٔ قابل چاپ.
@@ -18,4 +18,4 @@ License: GPLv2 or later
 چک‌لیست و یادداشت‌ها فقط در مرورگر ذخیره می‌شوند. این فهرست برای مرور کارهای داخلی است و برنامهٔ تکالیف قانونی یا مالیاتی نیست.
 برای حذف نمای جدید، گزینهٔ صفحهٔ نوشته‌ها را خاموش یا افزونه را غیرفعال کنید.
 
-Credits: Adapted from CampShopping Magazine 1.0.4 (GPL-2.0-or-later). Original license retained. Vazirmatn: SIL OFL 1.1.
+Credits: Adapted from CampShopping Magazine 1.0.5 (GPL-2.0-or-later). Original license retained. Vazirmatn: SIL OFL 1.1.

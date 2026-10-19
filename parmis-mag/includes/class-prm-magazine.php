@@ -376,8 +376,8 @@ final class PRM_Magazine {
     }
 
     public static function enqueue() {
-        wp_enqueue_style( 'prm-magazine', PRM_MAG_URL . 'assets/magazine.css', array(), PRM_MAG_VERSION );
-        wp_enqueue_script( 'prm-magazine', PRM_MAG_URL . 'assets/magazine.js', array(), PRM_MAG_VERSION, true );
+        wp_enqueue_style( 'prm-magazine', PRM_MAG_URL . 'assets/magazine.css', array(), PRM_MAG_VERSION . '.' . filemtime( PRM_MAG_DIR . 'assets/magazine.css' ) );
+        wp_enqueue_script( 'prm-magazine', PRM_MAG_URL . 'assets/magazine.js', array(), PRM_MAG_VERSION . '.' . filemtime( PRM_MAG_DIR . 'assets/magazine.js' ), true );
     }
 
     public static function maybe_enqueue() {

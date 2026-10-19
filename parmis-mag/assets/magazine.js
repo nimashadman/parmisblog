@@ -281,5 +281,22 @@
     window.addEventListener('afterprint', () => document.body.classList.remove('prm-printing'));
     $('#prm-print-checklist')?.addEventListener('click', () => window.print());
   }
+  function initializeFullWidthChrome() {
+    let scheduled = false;
+    const update = () => {
+      scheduled = false;
+      const viewport = document.documentElement.clientWidth;
+      const bounds = root.getBoundingClientRect();
+      root.style.setProperty('--prm-viewport-width', viewport + 'px');
+      root.style.setProperty('--prm-edge-offset', (bounds.right - viewport) + 'px');
+    };
+    const schedule = () => {
+      if (!scheduled) { scheduled = true; requestAnimationFrame(update); }
+    };
+    update();
+    window.addEventListener('resize', schedule, { passive: true });
+    if (typeof ResizeObserver !== 'undefined') new ResizeObserver(schedule).observe(root);
+  }
+  initializeFullWidthChrome();
   initializeArticles(); initializeMenu(); initializeChecklist();
 })();

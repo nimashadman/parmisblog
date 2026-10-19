@@ -581,3 +581,14 @@ body.prm-dialog-open { overflow: hidden; }
   #prm-mag .brand-name small { font-size: 8px; }
   #prm-mag .header-inner .brand-symbol:has(.brand-logo), #prm-mag .header-inner .brand-logo { width: 36px; height: 36px; }
 }
+
+/* Size actual chrome to the viewport, excluding the browser scrollbar. */
+@media screen {
+  #prm-mag .site-header, #prm-mag .site-footer {
+    box-sizing: border-box;
+    width: var(--prm-viewport-width, 100%);
+    max-width: none;
+    margin-inline-start: var(--prm-edge-offset, 0px);
+    margin-inline-end: 0;
+  }
+}
