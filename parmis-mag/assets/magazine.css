@@ -517,3 +517,18 @@ body.prm-dialog-open { overflow: hidden; }
 #prm-mag .brand-logo { object-fit: contain; }
 #prm-mag .site-footer .brand-symbol:has(.brand-logo) { background: #ffffff; border-radius: 10px; padding: 4px; }
 #prm-mag .site-footer .brand-logo { width: 38px; height: 38px; }
+
+/* Full-width footer; extend its background beyond boxed theme containers. */
+#prm-mag .site-footer {
+  width: 100%;
+  max-width: none;
+  position: relative;
+  box-shadow: 0 0 0 100vmax var(--brand-deep);
+  clip-path: inset(0 -100vmax);
+}
+#prm-mag .site-footer > .container {
+  width: 100%;
+  max-width: none;
+  padding-inline: clamp(20px, 4vw, 80px);
+  margin-inline: 0;
+}
