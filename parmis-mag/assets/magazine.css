@@ -532,3 +532,52 @@ body.prm-dialog-open { overflow: hidden; }
   padding-inline: clamp(20px, 4vw, 80px);
   margin-inline: 0;
 }
+
+/* Full-width, minimal navigation with a readable mobile dropdown. */
+#prm-mag .site-header { position: relative; isolation: isolate; width: 100%; max-width: none; }
+#prm-mag .site-header::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: var(--surface); box-shadow: 0 0 0 100vmax var(--surface);
+  clip-path: inset(0 -100vmax); pointer-events: none;
+}
+#prm-mag .header-inner.container {
+  width: 100%; max-width: none; margin-inline: 0;
+  padding-inline: clamp(20px, 4vw, 80px); min-height: 88px; gap: 24px;
+}
+#prm-mag .primary-nav { gap: 6px; }
+#prm-mag .primary-nav > a {
+  padding: 8px 14px; min-height: 44px; border-radius: 9px;
+  font-size: 13px; color: var(--ink); transition: background .18s ease, color .18s ease;
+}
+#prm-mag .primary-nav > a:hover, #prm-mag .primary-nav > a:focus-visible {
+  background: var(--soft); color: var(--brand);
+}
+#prm-mag .store-link {
+  border: 1px solid var(--line); border-radius: 10px; padding: 8px 14px;
+  font-size: 12px; background: var(--surface);
+}
+#prm-mag .store-link:hover { background: var(--soft); border-color: var(--brand); }
+#prm-mag .menu-toggle { border-radius: 10px; color: var(--brand); }
+#prm-mag .menu-toggle[aria-expanded="true"] { background: var(--soft); border-color: var(--brand); }
+@media (max-width: 1100px) {
+  #prm-mag .header-inner.container { gap: 12px; }
+  #prm-mag .primary-nav > a { padding-inline: 9px; font-size: 12px; }
+}
+@media (max-width: 920px) {
+  #prm-mag .header-inner.container { min-height: 76px; }
+  #prm-mag .primary-nav {
+    inset-inline: 0; top: 100%; padding: 12px clamp(20px, 4vw, 80px) 16px;
+    border: 0; border-bottom: 1px solid var(--line); border-radius: 0 0 16px 16px;
+    box-shadow: 0 12px 24px #32134f12;
+  }
+  #prm-mag .primary-nav.is-open { display: flex; flex-direction: column; align-items: stretch; gap: 4px; }
+  #prm-mag .primary-nav > a { font-size: 14px; padding: 12px; min-height: 48px; }
+}
+@media (max-width: 480px) {
+  #prm-mag .header-inner.container { padding-inline: 16px; gap: 8px; }
+  #prm-mag .header-actions { gap: 6px; }
+  #prm-mag .store-link { font-size: 10px; padding-inline: 8px; }
+  #prm-mag .brand-name { font-size: 18px; }
+  #prm-mag .brand-name small { font-size: 8px; }
+  #prm-mag .header-inner .brand-symbol:has(.brand-logo), #prm-mag .header-inner .brand-logo { width: 36px; height: 36px; }
+}
